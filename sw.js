@@ -1,4 +1,4 @@
-const CACHE_NAME='minha-escala-pessoal-v2-sem-login';
+const CACHE_NAME='minha-escala-pessoal-v3-instalacao';
 const ASSETS=['./','./index.html','./manifest.json','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(ASSETS))));
 self.addEventListener('activate',event=>event.waitUntil(Promise.all([

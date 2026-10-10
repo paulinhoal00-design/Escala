@@ -1,3 +1,33 @@
+# Atualização da instalação — v3
+
+Este pacote contém os arquivos completos. Publique o CONTEÚDO desta pasta na raiz do repositório Escala, ao lado do index.html existente, incluindo a pasta icons. Não envie apenas o ZIP ao GitHub e não crie uma pasta adicional escala dentro do site.
+
+Arquivos: index.html, manifest.json, sw.js, icons/icon-192.png e icons/icon-512.png.
+
+1. Substitua os três arquivos principais e envie a pasta icons inteira.
+2. Aguarde a publicação do GitHub Pages.
+3. Confirme que estes dois endereços abrem imagens:
+   https://paulinhoal00-design.github.io/Escala/icons/icon-192.png
+   https://paulinhoal00-design.github.io/Escala/icons/icon-512.png
+4. Abra https://paulinhoal00-design.github.io/Escala/ diretamente no Chrome. Se aparecer Nova versão disponível, toque Atualizar; se necessário, recarregue a página.
+5. O convite de instalação aparece quando o Chrome libera o evento. Também há a opção Instalação do aplicativo no menu lateral, com orientações quando o convite ainda não está disponível.
+6. A confirmação “Solicitação aceita” não significa instalação concluída. O aplicativo só informa instalação confirmada quando recebe o evento appinstalled do navegador.
+
+Se o Chrome disser que o app já está instalado e não conseguir abri-lo, esta alteração não remove registros de instalação do Android. Procure Minha Escala em Configurações > Aplicativos. Não limpe os dados do navegador como primeiro passo; exporte o backup antes de qualquer limpeza.
+
+## Alterações desta versão
+
+- Rotina de instalação e atualização em script independente, executado antes do módulo Firebase.
+- PNGs reais de 192 × 192 e 512 × 512, com os caminhos esperados.
+- ID explícito igual ao start_url anterior, preservando a identidade esperada do aplicativo.
+- Cache v3; a primeira ativação não recarrega a página durante o convite.
+- Tratamento de cancelamento, erro e confirmação de instalação.
+- Calendário, dados do Firestore e regras de acesso mantidos. Esta correção não exige mudança nas regras do Firebase.
+
+A interface pode ser armazenada pelo Service Worker. O calendário continua dependendo do carregamento do SDK Firebase e da conexão para sincronizar. A instalação final precisa ser verificada no Android após a publicação; não foi testada no aparelho do usuário.
+
+---
+
 # Minha Escala — abertura direta
 
 Aplicativo completo em HTML, CSS e JavaScript. Abre no calendário sem e-mail, senha ou Firebase Authentication. Mantém calendários mensal/anual, modelos personalizados (TF para 12x36, TTTTTTFF para 6x2, TTTTTTF para 6x1), períodos, ocorrências individuais, notas, temas claro/escuro/automático e backup JSON.
